@@ -9,10 +9,12 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     compile(kotlin("stdlib-jdk8"))
+    compile("io.ktor:ktor-server-netty:1.1.3")
 }
 
 tasks.withType<KotlinCompile> {
