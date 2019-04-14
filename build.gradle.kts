@@ -24,6 +24,8 @@ application {
 dependencies {
     compile(kotlin("stdlib-jdk8"))
     compile("io.ktor:ktor-server-netty:1.1.3")
+    compile("io.ktor:ktor-jackson:1.1.3")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.7.3")
     compile("ch.qos.logback:logback-classic:1.2.3")
     compile("com.uchuhimo:konf:0.13.2")
 }
