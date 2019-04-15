@@ -10,6 +10,7 @@ import io.ktor.application.Application
 import io.ktor.application.install
 import io.ktor.features.CallId
 import io.ktor.features.CallLogging
+import io.ktor.features.Compression
 import io.ktor.features.ContentNegotiation
 import io.ktor.routing.routing
 import io.ktor.server.engine.applicationEngineEnvironment
@@ -35,6 +36,7 @@ fun Application.module() {
     install(ContentNegotiation, contentNegotiation)
     install(CallId, callId)
     install(CallLogging, callLogging)
+    install(Compression)
 
     routing(routes())
 }
