@@ -2,14 +2,15 @@ package de.perschon.ktortemplate
 
 import de.perschon.ktortemplate.config.KonfKtorConfig
 import de.perschon.ktortemplate.config.Ktor
+import de.perschon.ktortemplate.config.callId
+import de.perschon.ktortemplate.config.callLogging
 import de.perschon.ktortemplate.config.contentNegotiation
 import de.perschon.ktortemplate.config.loadConfig
 import io.ktor.application.Application
-import io.ktor.application.call
 import io.ktor.application.install
+import io.ktor.features.CallId
+import io.ktor.features.CallLogging
 import io.ktor.features.ContentNegotiation
-import io.ktor.response.respond
-import io.ktor.routing.get
 import io.ktor.routing.routing
 import io.ktor.server.engine.applicationEngineEnvironment
 import io.ktor.server.engine.connector
@@ -32,6 +33,8 @@ fun main() {
 
 fun Application.module() {
     install(ContentNegotiation, contentNegotiation)
+    install(CallId, callId)
+    install(CallLogging, callLogging)
 
     routing(routes())
 }
